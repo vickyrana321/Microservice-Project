@@ -1,0 +1,48 @@
+//make DTO in order to take the product data from the client not 
+//use directly Product here in controller also donot write buisness logic 
+// in the controller use to write Service layer for this in other pakage; 
+//We should never expose our model entity to outside so must use dto or dao
+//therefore we made ProductRequest's object that is coming from client
+// and maping its values / data to Product instance and then storing in db
+// 
+//Similarly we used ProductResponse to find and map all products of Product type form
+// DB and passing it to the controller
+
+
+//We used Stream.map().toList() to map Product type obj into ProductResponse Obj
+//and made list out of it;
+
+// Now our product Service is runnig properly and we tested manually with Postman
+//But we want to have automated testing to our project
+// we are writing Integration test here not Unit testing
+
+Added TestContainers DependencyManagement and TC dependency for MOngoDB and JUnit
+ #3 
+ 
+ In third step we added eureka service discovery into our project and with this we can 
+ have record/status  of all of our services and can make multiple instances of single service
+ 
+ ## API Gateway can be used to achieve
+ 1> Routing Based on request headers
+ 2> Authentication 
+ 3. Security with Keycloack
+ 4> LoadBalancing 
+ 5> SSL Termination
+ 
+ ** doing security of services with keycloak
+
+(***(+)
+added resilience4J circuit breaker 
+1. incase if any service is unbale at that time
+2. if there is certain timeout for target service
+3. if we want to re send request to target service 
+
+** part 7 Distributed Tracing 
+with this we can trace the request from the start to the finish and know at what point the 
+request failed
+ 
+ 
+ part 10 dockerizing the project 
+ 
+ Using docker layer 
+ using JIB 
